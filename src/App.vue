@@ -8,13 +8,16 @@
 import $ from './components/jquery'
 import 'jqvmap'
 import 'jqvmap/dist/maps/jquery.vmap.world.js'
+import scrollreveal from 'scrollreveal'
 
+console.log(scrollreveal)
 function color (e, t) {
     return "rgba(" + parseInt(e.slice(1, 3), 16) + ", " + parseInt(e.slice(3, 5), 16) + ", " + parseInt(e.slice(5, 7), 16) + ", " + t + ")"
 }
 export default {
   name: 'app',
   mounted () {
+    var sr = new scrollreveal()
         var p = '<svg width="0" height="0"><defs><pattern id="map-pattern" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="3" style="stroke: none; fill: rgba(120,130,140, 0.3)"></circle></pattern></defs></svg>';
     // world map
       $('#jqvmap-world').each(function(){
@@ -40,11 +43,8 @@ export default {
               }
             }
         );
-        setTimeout(() => {
-          this.style.height = '240px'
-          this.style.transition = 'transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0s'
-        })
-        // sr.reveal(this, {origin:'bottom', distance: '10vh', scale: 0.3, rotate: {x: 65}});
+        debugger
+        sr.reveal(this, {origin:'bottom', distance: '10vh', scale: 0.3, rotate: {x: 65}});
       })
   }
 }
