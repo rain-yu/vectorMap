@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "jquery": "1.11.3",
+    "jquery": "3.5.0",
     "jqvmap": "^1.5.1",
     "scrollreveal": "3.3.6",
     "vue": "^2.6.10"
